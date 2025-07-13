@@ -1,0 +1,60 @@
+.mood-input {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.mood-input input[type="text"] {
+  padding: 0.7rem 1rem;
+  border-radius: 0.7rem;
+  border: 1px solid var(--border-color);
+  font-size: 1.1rem;
+  outline: none;
+  min-width: 120px;
+  flex: 1 1 120px;
+}
+.mood-input input[type="text"]:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px var(--primary-color-light);
+}
+.color-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.color-preview {
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  display: inline-block;
+}
+.mood-input input[type="color"] {
+  border: none;
+  background: none;
+  width: 2.2rem;
+  height: 2.2rem;
+  padding: 0;
+  cursor: pointer;
+}
+.mood-input button {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 0.7rem;
+  padding: 0.7rem 1.2rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-weight: 600;
+}
+.mood-input button:disabled {
+  background: var(--border-color);
+  color: #aaa;
+  cursor: not-allowed;
+}
+.mood-input button:not(:disabled):hover {
+  background: var(--primary-color-dark);
+}

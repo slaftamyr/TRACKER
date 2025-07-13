@@ -1,0 +1,179 @@
+.amodal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(36, 34, 51, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.5rem;
+}
+
+.amodal-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(18px) saturate(1.4);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 36px rgba(60, 40, 120, 0.18);
+  padding: 2.1rem 2rem 1.6rem 2rem;
+  min-width: 320px;
+  max-width: 96vw;
+  width: 100%;
+  max-width: 410px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: amodalFadeIn 0.22s;
+}
+
+@keyframes amodalFadeIn {
+  from {
+    transform: translateY(30px) scale(0.98);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.amodal-close {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.3rem;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: #a08bfa;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 2.2rem;
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.18s, background 0.18s;
+}
+.amodal-close:hover,
+.amodal-close:focus {
+  color: #4a3575;
+  background: #f3f0ff;
+}
+
+.amodal-header h2 {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #4a3575;
+  text-align: center;
+  margin-bottom: 1.1rem;
+  letter-spacing: 0.03em;
+}
+.amodal-date {
+  color: #a08bfa;
+  font-weight: 600;
+}
+
+.amodal-mood-list {
+  width: 100%;
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.amodal-no-moods {
+  color: #a08bfa;
+  font-size: 1.02rem;
+  margin-bottom: 0.7rem;
+}
+
+.amodal-mood-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 0.6rem 0.5rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.amodal-mood-btn {
+  border: none;
+  border-radius: 0.8rem;
+  padding: 0.65rem 1.1rem;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  cursor: pointer;
+  transition: transform 0.12s, box-shadow 0.13s, filter 0.13s, outline 0.13s;
+  outline: none;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.09);
+  filter: brightness(0.97);
+  position: relative;
+}
+.amodal-mood-btn:hover,
+.amodal-mood-btn:focus {
+  filter: brightness(1.11);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 0 3px #a08bfa33;
+  z-index: 1;
+}
+.amodal-mood-btn.selected {
+  border: 2.5px solid #a08bfa;
+  box-shadow: 0 0 0 4px #a08bfa55;
+  filter: brightness(1.18);
+}
+
+.amodal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.1rem;
+  width: 100%;
+  margin-top: 0.7rem;
+}
+.amodal-btn {
+  padding: 0.65rem 1.5rem;
+  font-size: 1.07rem;
+  font-weight: 600;
+  border-radius: 0.8rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.13s, color 0.13s, box-shadow 0.13s;
+}
+.amodal-cancel {
+  background: #f3f0ff;
+  color: #a08bfa;
+}
+.amodal-cancel:hover,
+.amodal-cancel:focus {
+  background: #e7e2ff;
+  color: #4a3575;
+}
+.amodal-assign {
+  background: #a08bfa;
+  color: #fff;
+  box-shadow: 0 1px 6px rgba(160, 139, 250, 0.09);
+}
+.amodal-assign:disabled {
+  background: #d3c6fa;
+  color: #f3f0ff;
+  cursor: not-allowed;
+}
+.amodal-assign:hover:not(:disabled),
+.amodal-assign:focus:not(:disabled) {
+  background: #7a5be7;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .amodal-card {
+    min-width: 0;
+    width: 100%;
+    padding: 1.1rem 0.5rem 1.1rem 0.5rem;
+    border-radius: 1.1rem;
+  }
+  .amodal-mood-grid {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  }
+  .amodal-header h2 {
+    font-size: 1.02rem;
+  }
+}

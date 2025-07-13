@@ -1,0 +1,19 @@
+.header {
+  padding: 2rem 1rem 1rem 1rem;
+  background: var(--primary-bg);
+  text-align: center;
+  border-radius: 0 0 1.5rem 1.5rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+.header h1 {
+  font-size: 2.2rem;
+  margin: 0;
+  color: var(--primary-color);
+  letter-spacing: 2px;
+}
+.subtitle {
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  font-weight: 400;
+}
